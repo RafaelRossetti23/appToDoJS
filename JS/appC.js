@@ -3,36 +3,44 @@ const inputElement = document.querySelector("#app input")
 const buttonElement = document.querySelector("#app .btn-call-add")
 const comunicados = document.querySelector("#comunicados")
 
+
 let todos = JSON.parse(localStorage.getItem('list_todos')) || []
 let description = ['teste']
 
+
 //criar as description
-function renderDescription(divRow2){
+function renderDescription(divRow2, divCont){
+    
     let divColA2 = document.createElement('div')
     divColA2.classList.add('col-sm-12', 'col-md-6')
     let buttonA2 = document.createElement('a')
-        buttonA2.classList.add('btn', 'btn-success')
+        buttonA2.classList.add('btn', 'btn-success', 'btn-call-description')
         buttonA2.setAttribute('http', '#')
         buttonA2.setAttribute('type', 'button')
         let bText = document.createTextNode("Adicionar Descrição")
         buttonA2.appendChild(bText)
-        buttonA2.setAttribute('onclick', 'addInput()')
     divRow2.appendChild(divColA2)  
-    divColA2.appendChild(buttonA2)    
+    divColA2.appendChild(buttonA2) 
+        let inputDescription = document.createElement('input')
+        inputDescription.setAttribute('type', 'text')
+        inputDescription.classList.add('form-control', 'input-description')
+        inputDescription.setAttribute('placeholder', 'digite sua descrição...') 
+        let divRow3 = document.createElement('div')
+        divRow3.classList.add('row')
+        let divCol3 = document.createElement('div')
+        divCol3.classList.add('col-12')
+        divCont.appendChild(divRow3)
+        divRow3.appendChild(divCol3)
+        divCol3.appendChild(inputDescription)  
+        buttonA2.onclick = addInput
+
+           
 }
 
-function addInput(divCont){
-    let inputDescription = document.createElement('input')
-    inputDescription.setAttribute('type', 'text')
-    inputDescription.setAttribute( 'class', 'form-control')
-    inputDescription.setAttribute('placeholder', 'digite sua descrição...')
-    let divRow3 = document.createElement('div')
-    divRow3.classList.add('row')
-    let divCol3 = document.createElement('div')
-    divCol3.classList.add('col-12')
-    divCont.appendChild(divRow3)
-    divRow3.appendChild(divCol3)
-    divCol3.appendChild(inputDescription)
+function addInput(){
+    let inputCss = document.querySelector('#app .input-description')
+    inputCss.style.display = 'block'
+    
     }
 function addDescription(divCont){
     // criar um Input 
@@ -59,7 +67,6 @@ function renderTodos(){
     appLi.appendChild(divCont)
     divCont.appendChild(divRow)
     divRow.appendChild(divCol) 
-    addInput(divCont)
     let divRow2 = document.createElement('div')
         divRow2.classList.add('row')
     let divColA = document.createElement('div')
@@ -75,7 +82,7 @@ function renderTodos(){
     divCont.appendChild(divRow2)
     divRow2.appendChild(divColA)
     divColA.appendChild(buttonA)   
-    renderDescription(divRow2)       
+    renderDescription(divRow2, divCol)       
 }
 }
 
