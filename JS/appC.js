@@ -19,13 +19,9 @@ function renderDescription(divRow2){
         buttonA2.setAttribute('onclick', 'addInput()')
     
     divRow2.appendChild(divColA2)  
-    divColA2.appendChild(buttonA2) 
-    
-
-    
+    divColA2.appendChild(buttonA2)    
 }
 function addInput(divCont){
-    
     let inputDescription = document.createElement('input')
     inputDescription.setAttribute('type', 'text')
     inputDescription.setAttribute( 'class', 'form-control')
@@ -34,15 +30,12 @@ function addInput(divCont){
     divRow3.classList.add('row')
     let divCol3 = document.createElement('div')
     divCol3.classList.add('col-12')
-    
     divCont.appendChild(divRow3)
     divRow3.appendChild(divCol3)
     divCol3.appendChild(inputDescription)
     }
 function addDescription(divCont){
     // criar um Input 
-    
-    
 }
 // Criar as Li dos ToDos
 function renderTodos(){
@@ -50,7 +43,6 @@ function renderTodos(){
     comunicados.innerHTML= ''
     comunicados.style.border= 'none'
     for (todo of todos){
-        
     let appLi = document.createElement('li')
     let divCont = document.createElement('div')
         divCont.classList.add('container') 
@@ -62,7 +54,6 @@ function renderTodos(){
         divCol.appendChild(todoH2)
         let divColText = document.createTextNode(todo)
             todoH2.appendChild(divColText)
-        
     appUl.appendChild(appLi)
     appLi.appendChild(divCont)
     divCont.appendChild(divRow)
@@ -80,14 +71,11 @@ function renderTodos(){
                 buttonA.appendChild(aText)
             let pos = todos.indexOf(todo)
                 buttonA.setAttribute('onclick', 'deleteTodo(' + pos + ')')
-    
     divCont.appendChild(divRow2)
     divRow2.appendChild(divColA)
     divColA.appendChild(buttonA)   
-    renderDescription(divRow2)   
-    
+    renderDescription(divRow2)       
 }
-    
 }
 renderTodos()
 // adicionar novo ToDo
@@ -95,11 +83,6 @@ function addTodo(){
     comunicados.innerHTML= ''
     comunicados.style.border = 'none'
     if (inputElement.value === ''){
-        //let msgerro1 = document.createElement('p')
-        //let msgtext1 = document.createTextNode(`Insira uma tarefa para continuar`)
-        //msgerro1.appendChild(msgtext1)
-        //comunicados.style.border= '3px dashed #a001fb'
-        //comunicados.appendChild(msgerro1)
         $('.collapse').collapse('toggle')
         $('#myCollapsible').collapse({
             toggle: false
@@ -113,10 +96,8 @@ function addTodo(){
     saveToStorage()
 }
 }
-
 // deletar todo
 buttonElement.onclick = addTodo
-
 function deleteTodo(pos){
    todos.splice(pos, 1)
    renderTodos() 
