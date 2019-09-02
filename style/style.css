@@ -40,6 +40,7 @@ body {
     margin-top: 10px;
 }
 .collapse-content {
-    border: 3px dashed white;
+    border-top: 1px dashed white;
+    border-bottom: 1px dashed white;
     padding-top: 15px;
 }
