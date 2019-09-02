@@ -3,9 +3,9 @@ const inputElement = document.querySelector("#app input")
 const buttonElement = document.querySelector("#app .btn-call-add")
 const comunicados = document.querySelector("#comunicados")
 
-
 let todos = JSON.parse(localStorage.getItem('list_todos')) || []
 let description = ['teste']
+
 //criar as description
 function renderDescription(divRow2){
     let divColA2 = document.createElement('div')
@@ -17,10 +17,10 @@ function renderDescription(divRow2){
         let bText = document.createTextNode("Adicionar Descrição")
         buttonA2.appendChild(bText)
         buttonA2.setAttribute('onclick', 'addInput()')
-    
     divRow2.appendChild(divColA2)  
     divColA2.appendChild(buttonA2)    
 }
+
 function addInput(divCont){
     let inputDescription = document.createElement('input')
     inputDescription.setAttribute('type', 'text')
@@ -37,6 +37,7 @@ function addInput(divCont){
 function addDescription(divCont){
     // criar um Input 
 }
+
 // Criar as Li dos ToDos
 function renderTodos(){
     appUl.innerHTML = ''
@@ -77,7 +78,9 @@ function renderTodos(){
     renderDescription(divRow2)       
 }
 }
+
 renderTodos()
+
 // adicionar novo ToDo
 function addTodo(){
     comunicados.innerHTML= ''
@@ -96,6 +99,7 @@ function addTodo(){
     saveToStorage()
 }
 }
+
 // deletar todo
 buttonElement.onclick = addTodo
 function deleteTodo(pos){
@@ -103,6 +107,7 @@ function deleteTodo(pos){
    renderTodos() 
    saveToStorage()
 }
+
 // salvar todos localmente
 function saveToStorage (){
     // variavel locaStorage global para acessar o local storage (só guarda uma Key e um Value, por isso converter o vetor em string pelo json)
