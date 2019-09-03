@@ -15,9 +15,7 @@ body {
     padding: 10px;
     color: white;
     border-bottom: 1px solid white;
-    list-style: none;
-   
-    
+    list-style: none;  
 }
 @media (max-width: 768px){
     #app li {
@@ -27,8 +25,6 @@ body {
 #app a{
     display: flex;
     flex-direction: column-reverse;
-    
-   
 }
 .btn-add {
     color: white;
@@ -44,6 +40,10 @@ body {
     margin-top: 10px;
 }
 .collapse-content {
-    border: 3px dashed white;
+    border-top: 1px dashed white;
+    border-bottom: 1px dashed white;
     padding-top: 15px;
+}
+#app .input-description {
+    display: none;
 }
