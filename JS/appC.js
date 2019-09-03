@@ -1,15 +1,14 @@
 const appUl = document.querySelector("#app ul")
 const inputElement = document.querySelector("#app input")
 const buttonElement = document.querySelector("#app .btn-call-add")
-const comunicados = document.querySelector("#comunicados")
+
 
 
 let todos = JSON.parse(localStorage.getItem('list_todos')) || []
 // Criar as Li dos ToDos
 function renderTodos(){
     appUl.innerHTML = ''
-    comunicados.innerHTML= ''
-    comunicados.style.border= 'none'
+    
     for (todo of todos){
         
     let appLi = document.createElement('li')
@@ -47,14 +46,7 @@ function renderTodos(){
 renderTodos()
 // adicionar novo ToDo
 function addTodo(){
-    comunicados.innerHTML= ''
-    comunicados.style.border = 'none'
     if (inputElement.value === ''){
-        //let msgerro1 = document.createElement('p')
-        //let msgtext1 = document.createTextNode(`Insira uma tarefa para continuar`)
-        //msgerro1.appendChild(msgtext1)
-        //comunicados.style.border= '3px dashed #a001fb'
-        //comunicados.appendChild(msgerro1)
         $('.collapse').collapse('toggle')
         $('#myCollapsible').collapse({
             toggle: false
