@@ -4,6 +4,7 @@ const buttonElement = document.querySelector("#app .btn-call-add")
 const comunicados = document.querySelector("#comunicados")
 
 
+
 let todos = JSON.parse(localStorage.getItem('list_todos')) || []
 let description = ['teste']
 
