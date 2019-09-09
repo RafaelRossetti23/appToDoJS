@@ -1,12 +1,13 @@
 body {
-    background: #a001fb;
+    background: #0253af;
 }
 #app {
-    background: #7058be;
+    background: #55a4ff;
     padding: 20px;
     color: white;
     width: 100%;
-    box-shadow: 3px 3px rgba(110, 7, 228, 0.5);
+    box-shadow: 1px 1px 5px #fff;
+    
 }
 #app ul{
    margin-left: -30px; 
@@ -42,4 +43,8 @@ body {
 }
 #comunicados p{
     margin-top: 10px;
+}
+.collapse-content {
+    border: 3px dashed white;
+    padding-top: 15px;
 }
